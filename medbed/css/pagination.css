@@ -1,0 +1,87 @@
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #1E0B9B;
+    border-color: #F3969A;
+    /* border: 1px solid #1842ff; */
+}
+
+.pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.4rem;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.5rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #fff !important;
+    background-color: #0f1117;
+}
+
+/* .page-link {
+    color: #747474 !important;
+} */
+
+.page-link:hover {
+    color: #f51c1c;
+}
+
+/* Pagination */
+
+.page-link {
+    border: none;
+    min-width: 50px;
+    /* allow wider if needed */
+    height: 50px;
+    padding: 0 15px;
+    /* add padding for words */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #1E0B9B; */
+    background: transparent linear-gradient(90deg, #1E0B9B 0%, #07CCEC 100%) 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    /* pill shape (circle if only number) */
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    /* keep text on one line */
+    margin: 0 5px;
+}
+
+.page-link:hover {
+    background-color: #d6c1c1;
+}
+
+.page-link.active,
+.active>.page-link {
+    /* background-color: #28a745; */
+    background-image: linear-gradient(to bottom, #1e0b9b, #1e0b9b);
+    /* Green background */
+    /* border-color: #28a745; */
+    /* Green border */
+    color: #fff;
+    /* White text */
+    font-weight: bold;
+    /* Make it bold */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    /* Optional shadow */
+    background-size: cover;
+    position: relative;
+    z-index: 10;
+    overflow: visible !important;
+}

